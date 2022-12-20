@@ -23,7 +23,7 @@ class Game:
                 letters.remove(letter)
             else:
                 return False
-        response = requests.get(BASE + word).json()
+        response = requests.get(BASE + word, timeout=5).json()
         print(response)
         if response['found'] is not True:
             return False
