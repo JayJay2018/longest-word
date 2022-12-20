@@ -25,6 +25,6 @@ class Game:
                 return False
         response = requests.get(BASE + word).json()
         print(response)
-        if response['found'] != True:
+        if response['found'] is not True:
             return False
         return True
